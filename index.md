@@ -8,6 +8,8 @@ Quick-Cocos2dx-Community 具有 Cocos2d-x 和 Quick-Cocos2d-x 的所有优点。
 
 [http://www.cocos2d-lua.org/](http://www.cocos2d-lua.org/)
 
+**QQ 群：361920466**
+
 ## 相关开源仓库地址
 
 引擎代码仓库: [Quick-Cocos2dx-Community](https://github.com/u0u0/Quick-Cocos2dx-Community)
