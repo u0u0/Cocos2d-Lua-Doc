@@ -12,10 +12,10 @@ Quick-Cocos2dx-Community 具有 Cocos2d-x 和 Quick-Cocos2d-x 的所有优点。
 
 ## 相关开源仓库地址
 
-引擎代码仓库: [Quick-Cocos2dx-Community](https://github.com/u0u0/Quick-Cocos2dx-Community)
-第三方库编译框架: [Quick-3rd-party-libs](https://github.com/u0u0/Quick-3rd-party-libs)
-vim开发插件: [vim-quick-community](https://github.com/u0u0/vim-quick-community)
-sublime开发插件: [quick-comminuty-dev](https://github.com/u0u0/quick-comminuty-dev)
+* 引擎代码仓库: [Quick-Cocos2dx-Community](https://github.com/u0u0/Quick-Cocos2dx-Community)
+* 第三方库编译框架: [Quick-3rd-party-libs](https://github.com/u0u0/Quick-3rd-party-libs)
+* vim开发插件: [vim-quick-community](https://github.com/u0u0/vim-quick-community)
+* sublime开发插件: [quick-comminuty-dev](https://github.com/u0u0/quick-comminuty-dev)
 
 ## 快速安装指南
 
