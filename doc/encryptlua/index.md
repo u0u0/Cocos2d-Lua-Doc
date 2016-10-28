@@ -67,3 +67,11 @@ Cocos2d-Lua(Quick-cocos2d-x) 集成有 Player 模拟器，可以快速测试 Lua
     lua_loadChunksFromZIP() - load zip file: /private/var/mobile/Containers/Bundle/Application/A2985A39-3588-48AD-8219-2476A12B956E/test iOS.app/res/game.zip*
     lua_loadChunksFromZIP() - loaded chunks count: 125
     ```
+
+## Android 平台的差异
+
+大部分过程和iOS相同，不同点在第3条，Android修改资源的引用分下面三个步骤：
+
+1. 运行BuildNative脚本，让资源自动拷贝到assert目录。
+2. 进入assert目录，手动删除lua源代码文件，保留game.zip
+3. 用ant或Android Studio打包apk。
