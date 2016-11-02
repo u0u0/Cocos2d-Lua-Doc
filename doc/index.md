@@ -8,6 +8,7 @@
 ## 代码编辑器
 
 * [Sublime的quick-community-dev插件安装](./sublime/index.md)
+* [安装 Quick-Cocos2dx-community 的 vim 开发插件](./vim/index.md)
 
 ## 工具
 
