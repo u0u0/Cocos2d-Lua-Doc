@@ -62,6 +62,33 @@ SYNOPSIS
 
 build_native.py 在编译成功后，会自动拷贝 res , src 到assert目录，每当这两个文件夹下的数据有改动的时候，你都应该再次运行 build_native.py 脚本。别担心，native代码不会再次编译，整个过程很快就会完成。
 
+## so文件体积的优化
+
+Quick 对 Android 的 Native 编译进行了模块化设置，可以根据游戏实际用到的功能进行裁剪，从而达到减少包体积的目的。
+
+打开项目下的`frameworks/runtime-src/proj.android/libcocos2dx/jni/Application.mk`文件，找到如下的代码片段：
+
+```
+CC_USE_CURL := 1       # curl库
+CC_USE_CCSTUDIO := 1   # CocoStudio runtime
+CC_USE_CCBUILDER := 1  # CocosBuider runtime
+CC_USE_SPINE := 1      # Spine runtime
+CC_USE_PHYSICS := 1    # Chipmunk库
+CC_USE_TIFF := 1       # TIFF库
+CC_USE_WEBP := 1       # webp库
+CC_USE_JPEG := 1       # jpeg 库
+CC_USE_3D := 1         # Cocos 3D 支持
+CC_USE_SQLITE := 1     # Sqlite 支持
+```
+
+后面的备注已说明模块的作用，如需关掉，只需要把 1 改为 0，例如关闭 CURL 支持：
+
+```
+CC_USE_CURL := 0
+```
+
+修改完毕，再次运行`build_native.py`编译so库。
+
 ## Android Studio 打包
 
 首先你需要正确安装 Android Studio。运行 Android Studio 在启动界面选择"Open an existing Android Studio project"，在弹出的文件夹选择器中选择项目的`proj.android`文件夹。
