@@ -2,6 +2,7 @@
 
 ## Lua
 
+* [手动绑定Lua接口](./luabinding/index.md)
 * [Quick-Cocos2dx-Community 中 64 位 Luajit 使用说明](./luajit/index.md)
 * [Quick 中使用的 Lua 数学库](./math/index.md)
 
