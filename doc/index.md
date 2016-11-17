@@ -3,6 +3,7 @@
 ## Lua
 
 * [手动绑定Lua接口](./luabinding/index.md)
+* [在 Lua 中使用 luaj 直接调用 Android 的 Java 代码](./luaj/index.md)
 * [Quick-Cocos2dx-Community 中 64 位 Luajit 使用说明](./luajit/index.md)
 * [Quick 中使用的 Lua 数学库](./math/index.md)
 
