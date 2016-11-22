@@ -6,5 +6,6 @@ Quick-Cocos2dx-Community 基于Lua 5.1进行开发，有关Lua 5.1的语法以�
 
 * [display](./display/index.md)
 * [luaj](./luaj/index.md)
+* [luaoc](./luaoc/index.md)
 
 ## Cocos2d-x Lua binding

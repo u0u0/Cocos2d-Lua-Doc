@@ -149,6 +149,6 @@ context.runOnGLThread(new Runnable() {
 
 ## Lua function 的引用计数
 
-由于 Lua 虚拟机具有自动垃圾回收机制，传入 Java 端的 Lua function 的引用计数会在**C层的LuaJavaBridge中自动增加1**。
+由于 Lua 虚拟机具有自动垃圾回收机制，传入 Java 端的 Lua function 的引用计数会在**C层的LuaJavaBridge中自动增加1**，以保护函数不被垃圾回收。
 
-而 Java 层的 LuaJavaBridge 提供了 releaseLuaFunction(luaFunctionId) 函数用于减少 Lua function 的引用计数。
+对应地，在 Java 层的 LuaJavaBridge 提供了 releaseLuaFunction(luaFunctionId) 函数用于减少 Lua function 的引用计数。
