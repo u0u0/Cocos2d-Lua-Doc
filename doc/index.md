@@ -8,6 +8,10 @@
 * [Quick-Cocos2dx-Community 中 64 位 Luajit 使用说明](./luajit/index.md)
 * [Quick 中使用的 Lua 数学库](./math/index.md)
 
+## 渲染
+
+* [自定义 Shader 的使用](./shader/index.md)
+
 ## 代码编辑器
 
 * [Sublime的quick-community-dev插件安装](./sublime/index.md)
