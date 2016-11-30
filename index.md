@@ -32,9 +32,12 @@ Quick-Cocos2dx-Community 具有 Cocos2d-x 和 Quick-Cocos2d-x 的所有优点。
 	defaults write com.apple.dt.Xcode IDESourceTreeDisplayNames -dict-add QUICK_V3_ROOT QUICK_V3_ROOT
     ```
 
-   Windows系统：双击setup_win.bat即可。
+	Windows系统：双击setup_win.bat即可。
+
 3. 启动 player
+
 	> 运行步骤2以后，脚本会自动创建player的快捷方式。
 
-	 Mac 系统在 Applications 文件夹(或系统应用列表)中 player.app 。
-	 Windows 系统在桌面上的 player.exe 快捷方式。
+	Mac 系统在 Applications 文件夹(或系统应用列表)中 player.app 。
+
+	Windows 系统在桌面上的 player.exe 快捷方式。
