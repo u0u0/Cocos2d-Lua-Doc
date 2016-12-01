@@ -10,17 +10,17 @@ google的黑科技protobuffer开源以后，在游戏的客户端与服务器通
 
 ## 版本说明
 
-Quick-Cocos2dx-Community 集成 protoc-gen-lua 方案，并做以下修正：
+Quick-Cocos2dx-Community 从 3.6.4 开始集成 protoc-gen-lua 方案，并做以下修正：
 
 1. 修正了 protoc-gen-lua 嵌套问题。
 2. 添加通过message:DescriptorType()获取子类的真实名称。
+3. 修正`main function has more than 200 local variables`错误。
 
 对应的protobuffer版本为2.6.1。
 
-[protoc-gen-lua-mac.zip](https://pan.baidu.com/s/1mh5V1Rq)
-[protoc-gen-lua-win32.zip](https://pan.baidu.com/s/1dFjzzsl)
+[protoc-gen-lua-mac.zip](https://pan.baidu.com/s/1c2Ht8i8)
 
-[引擎commit](https://github.com/iTyran/Quick-Cocos2dx-Community/commit/18fcb5f74c965be95cd05197b83f865dd47793ee)
+[protoc-gen-lua-win32.zip](https://pan.baidu.com/s/1kVAZFaJ)
 
 ## 安装
 
