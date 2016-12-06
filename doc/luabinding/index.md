@@ -237,6 +237,33 @@ toluafix_remove_function_by_refid(L, handler);
 
 > Cocos2d lua层的双内存管理真心反人类。但基础于现在的架构，又不得不这样做。
 
+## 注册
+
+在`YourProject/frameworks/runtime-src/Classes/AppDelegate.cpp`的头部添加文件引用
+
+```
+#include "MyClass_binding.h"
+```
+
+在quick_module_register函数的**if**中添加注册代码：
+
+```
+    if (lua_istable(L, -1))//stack:...,_G,
+    {
+        register_all_quick_manual(L);
+        // extra
+        luaopen_cocos2dx_extra_luabinding(L);
+        register_all_cocos2dx_extension_filter(L);
+        register_all_cocos2dx_extension_nanovg(L);
+        register_all_cocos2dx_extension_nanovg_manual(L);
+        luaopen_HelperFunc_luabinding(L);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        luaopen_cocos2dx_extra_ios_iap_luabinding(L);
+#endif
+		luaopen_myclass_luabinding(L);//添加的代码
+    }
+```
+
 ## Lua 测试
 
 完整的测试代码如下：
