@@ -1,6 +1,6 @@
 # Android 项目的编译与打包
 
-从 Quick-Cocos2dx-Community 3.4 开始，proj.android 模版工程修改为Android Studio，放弃对ADT的支持，移除了AnySDK的集成。apk的生成分2个部分进行。
+从 Quick-Cocos2dx-Community 3.6.4 开始，proj.android 模版工程修改为Android Studio，放弃对ADT的支持，移除了AnySDK的集成。apk的生成分2个部分进行。
 
 ## Build Native
 
