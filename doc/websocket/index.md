@@ -160,3 +160,5 @@ $openssl req -new -x509 -key key.pem -out cert.pem -days 3650
 
 由于苹果最新审核要求所有网络请求加入SSL安全链接，Quick社区版从 [commit 617427c99760467a7814993a643c91312ad87f00](https://github.com/u0u0/Quick-Cocos2dx-Community/commit/617427c99760467a7814993a643c91312ad87f00)
 开始支持 WebSocket 的安全连接。
+
+服务器CA的cert.pem文件需要拷贝到项目工程res下，并改名为"wssca.pem"。引擎会用这个文件作为CA库来验证服务器。
