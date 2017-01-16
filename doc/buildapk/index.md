@@ -79,6 +79,7 @@ CC_USE_WEBP := 1       # webp库
 CC_USE_JPEG := 1       # jpeg 库
 CC_USE_3D := 1         # Cocos 3D 支持
 CC_USE_SQLITE := 1     # Sqlite 支持
+CC_USE_UNQLITE := 1    # UnQLite 支持
 ```
 
 后面的备注已说明模块的作用，如需关掉，只需要把 1 改为 0，例如关闭 CURL 支持：
