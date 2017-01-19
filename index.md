@@ -1,10 +1,10 @@
 # Quick-Cocos2dx-Community - Cocos2d-Lua 社区版
 
-Quick-Cocos2dx-Community 发展自用户公认的最稳定版本 Quick-Cocos2d-x v3.3。作为Cocos2d-x 的 Lua 用户，我们并不赞成 Lua 分支合并到Cocos2d-x主版本中，也不需要工程中包含js等部分。
+Quick-Cocos2dx-Community 发展自用户公认的最稳定版本 Quick-Cocos2d-x v3.3。作为 Cocos2d-x 的 Lua 用户，我们并不赞成 Lua 分支合并到Cocos2d-x主版本中，也不需要工程中包含js等部分。
 
 Quick-Cocos2dx-Community 具有 Cocos2d-x 和 Quick-Cocos2d-x 的所有优点。并在 Quick-Cocos2d-x 基础上更新了最新的平台和第三方功能。让开发者可以用更低的成本、更高的开发效率、更省的人力成本创造高品质手游产品。
 
-## 官方网站
+## 网站
 
 [http://www.cocos2d-lua.org/](http://www.cocos2d-lua.org/)
 
