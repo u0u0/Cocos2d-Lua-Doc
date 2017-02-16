@@ -10,25 +10,38 @@ google的黑科技protobuffer开源以后，在游戏的客户端与服务器通
 
 ## 版本说明
 
-Quick-Cocos2dx-Community 从 3.6.4 开始集成 protoc-gen-lua 方案，并做以下修正：
+Quick-Cocos2dx-Community 集成 protoc-gen-lua 方案，并做以下修正：
 
-1. 修正了 protoc-gen-lua 嵌套问题。
-2. 添加通过message:DescriptorType()获取子类的真实名称。
-3. 修正`main function has more than 200 local variables`错误。
+1. 修正了 protoc-gen-lua 嵌套问题。(工具中修正)
+2. 添加通过 message:DescriptorType()获取子类的真实名称。(引擎中修正)
+3. 修正 main function has more than 200 local variables 错误。(工具中修正)
+4. 修正 enum 变量有 default 的时候，不能正确设置 default 值的问题。(工具中修正)
 
 对应的protobuffer版本为2.6.1。
 
-[protoc-gen-lua-mac.zip](https://pan.baidu.com/s/1c2Ht8i8)
+## 下载地址
 
-[protoc-gen-lua-win32.zip](https://pan.baidu.com/s/1kVAZFaJ)
+* [protoc-gen-lua-mac.zip](https://pan.baidu.com/s/1o8PkJDS)
+* [protoc-gen-lua-win32.zip](https://pan.baidu.com/s/1gfhzHEr)
 
 ## 安装
 
 1. 安装Python 2.x, Windows下请安装32位的python。
 2. 如果已通过pip安装了protobuffer的python插件，请先卸载掉，以保证版本匹配。
-3. 解压protoc-gen-lua.zip，进入`python`目录. 启动控制台，运行`python setup.py install`，安装protobuffer的python包。
+3. 解压protoc-gen-lua.zip，进入`python_win32`或`python_mac`目录. 启动控制台，运行`python setup.py install`，安装protobuffer的python包。
 
 > zip包自带了protobuf-2.6.1编译后的"compiler"，并以放置在python插件目录下，以保证python插件安装成功。
+
+## proto 协议文件编码注意事项
+
+1. 不要使用 Groups，用 nested message 替代。
+2. 不支持 Extensions 特性。
+3. Oneof 特性未测试过，请不要使用。
+4. Maps 特性未测试过，请不要使用。
+5. option 特性未测试过，请不要使用。
+6. 建议分模块定义 proto，一个文件定义完全部message的粗暴方式不推荐。
+7. optional 后是 enum 类型的，建议加上 [default = enumType] 来指定默认值，否者会用nil来设置默认值。其它基本类型的默认值能正确设置。
+8. repeated 类型需要用 add() 或 append() 来添加项。add用来添加message或enum等自定义类型，append用来添加int等已知类型。
 
 ## proto 转化为 lua
 
@@ -40,54 +53,117 @@ protoc-gen-lua是以插件的形式，配合google官方的protoc来实现.proto
 
 ## 引擎中的使用
 
-把"GetRoom_pb.lua"、"ResultInfo_pb.lua"、"RoomInfo_pb.lua"拷贝到`src/app/pb`文件夹。
-
-引用
+把`AddressBook_pb.lua、GetRoom_pb.lua、ResultInfo_pb.lua、RoomInfo_pb.lua`拷贝到项目工程下的`src/app/pb`文件夹中。
 
 ```
+-- 引用文件
+require("app.pb.AddressBook_pb")
 require("app.pb.ResultInfo_pb")
 require("app.pb.RoomInfo_pb")
 require("app.pb.GetRoom_pb")
-```
 
-序列化与反序列化测试
-
-```
---序列化GetRoomRequest---------------------------------------
-local roomIdList = {1,2,3}
-local getRoomRequest = GetRoom_pb.GetRoomRequest()--#pbTips
---循环体
-table.foreach(roomIdList, function(roomId)
-	--房间编号
-	table.insert(getRoomRequest.roomId,roomId)
+local MainScene = class("MainScene", function()
+    return display.newScene("MainScene")
 end)
-local data = getRoomRequest:SerializeToString()
 
---反序列化GetRoomRequest
-local getRoomRequestPaser = GetRoom_pb.GetRoomRequest()--#pbTips
-getRoomRequestPaser:ParseFromString(data)
-dump(getRoomRequestPaser)
-
-
---序列化GetRoomResponse----------------------------------------
-local getRoomResponse = GetRoom_pb.GetRoomResponse()
-getRoomResponse.result = ResultInfo_pb.SUCCESS
---循环的嵌套消息
-for i=1,2 do
-	local room = getRoomResponse.room:add()
-	room.id = "1000"..i
-	room.name = "小黑屋-"..i
-	room.taskType = RoomInfo_pb.MAINLINE
+function MainScene:ctor()
+	self:testRoom()
+	self:testPerson()
 end
-local data = getRoomResponse:SerializeToString()
 
---反序列化GetRoomResponse
-local getRoomResponsePaser = GetRoom_pb.GetRoomResponse()
-getRoomResponsePaser:ParseFromString(data)
--- dump(getRoomResponsePaser)
--- dump(getRoomResponsePaser.room)
-local room1 = getRoomResponsePaser.room[1]
-dump(room1)
-local room2 = getRoomResponsePaser.room[2]
-dump(room2)
+function MainScene:testRoom()
+	-- 序列化 GetRoomRequest
+	local roomIdList = {10,20,30}
+	local getRoomRequestWriter = GetRoom_pb.GetRoomRequest() --#pbTips
+
+	for _, v in ipairs(roomIdList) do
+		getRoomRequestWriter.roomId:append(v) -- 向数组添加元素，不能直接赋值
+	end
+	print("== Serialize to GetRoomRequest")
+	local data = getRoomRequestWriter:SerializeToString()
+
+	-- 反序列化 GetRoomRequest
+	local getRoomRequestReader = GetRoom_pb.GetRoomRequest() --#pbTips
+	print("== Parse From GetRoomRequest")
+	getRoomRequestReader:ParseFromString(data)
+	-- 使用 ipairs 可正确获取到数据，paris 会有多余数据打印出来
+	for _, v in ipairs(getRoomRequestReader.roomId) do
+		print(v)
+	end
+
+	-- 序列化 GetRoomResponse
+	local getRoomResponseWriter = GetRoom_pb.GetRoomResponse()
+	getRoomResponseWriter.result = ResultInfo_pb.SUCCESS
+
+	for i=1,2 do
+		local room = getRoomResponseWriter.room:add() -- 数组中的元素是对象，用add来添加
+		room.id = "1000" .. i
+		room.name = "小黑屋-" .. i
+		room.taskType = RoomInfo_pb.MAINLINE
+	end
+	print("== Serialize to GetRoomResponse")
+	local data = getRoomResponseWriter:SerializeToString()
+
+	-- 反序列化 GetRoomResponse
+	local getRoomResponseReader = GetRoom_pb.GetRoomResponse()
+	print("== Parse From GetRoomResponse")
+	getRoomResponseReader:ParseFromString(data)
+	print("result:" .. getRoomResponseReader.result)
+	print("message:" .. getRoomResponseReader.message) -- default value test
+	for _, v in ipairs(getRoomResponseReader.room) do
+		print(v.id)
+		print(v.name)
+		print(v.taskType)
+		print(v.needHp) -- default value test
+	end
+end
+
+function MainScene:testPerson()
+	print("========= test AddressBook ====")
+
+	-- 序列化
+	local addressBookWriter = AddressBook_pb.AddressBook()
+	for i = 1, 5 do
+		local person = addressBookWriter.person:add()
+		person.name = "my " .. i
+		person.id = i
+
+		local phone = person.phone:add()
+		phone.number = "123456789"
+		if i % 2 == 0 then
+			phone.type = AddressBook_pb.Person.WORK
+		end
+	end
+	local data = addressBookWriter:SerializeToString()
+
+	-- write to file for compare test with python pb
+	local path = cc.FileUtils:getInstance():getWritablePath() .. "testpb.bin"
+	io.writefile(path, data, "wb")
+
+	-- 反序列化
+	local addressBookReader = AddressBook_pb.AddressBook()
+	addressBookReader:ParseFromString(data)
+	for _, person in ipairs(addressBookReader.person) do
+		print(person.name)
+		print(person.id)
+		for _, phone in ipairs(person.phone) do
+			print(phone.number)
+			if (phone.type == AddressBook_pb.Person.MOBILE) then
+				print("MOBILE")
+			elseif (phone.type == AddressBook_pb.Person.HOME) then
+				print("HOME")
+			else
+				print("WORK")
+			end
+		end
+	end
+end
+
+function MainScene:onEnter()
+end
+
+function MainScene:onExit()
+end
+
+return MainScene
 ```
