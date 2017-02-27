@@ -69,7 +69,7 @@ Quick 对 Android 的 Native 编译进行了模块化设置，可以根据游戏
 打开项目下的`frameworks/runtime-src/proj.android/libcocos2dx/jni/Application.mk`文件，找到如下的代码片段：
 
 ```
-CC_USE_CURL := 1       # curl库
+CC_USE_CURL := 1       # 1使用curl的http，0使用Java http
 CC_USE_CCSTUDIO := 1   # CocoStudio runtime
 CC_USE_CCBUILDER := 1  # CocosBuider runtime
 CC_USE_SPINE := 1      # Spine runtime
@@ -80,18 +80,53 @@ CC_USE_JPEG := 1       # jpeg 库
 CC_USE_3D := 1         # Cocos 3D 支持
 CC_USE_SQLITE := 1     # Sqlite 支持
 CC_USE_UNQLITE := 1    # UnQLite 支持
+CC_USE_PROTOBUF := 1   # Google protocol buffers 数据协议
+CC_USE_SPROTO := 1     # 风云的 Sproto 数据协议
 ```
 
-后面的备注已说明模块的作用，如需关掉，只需要把 1 改为 0，例如关闭 CURL 支持：
+后面的备注已说明模块的作用，如需关掉，只需要把 1 改为 0，例如关闭 Sproto 支持：
 
 ```
-CC_USE_CURL := 0
+CC_USE_SPROTO := 0
 ```
 
 修改完毕，再次运行`build_native.py`编译so库。
 
 ## Android Studio 打包
 
-首先你需要正确安装 Android Studio。运行 Android Studio 在启动界面选择"Open an existing Android Studio project"，在弹出的文件夹选择器中选择项目的`proj.android`文件夹。
+Android Studio 是 Google 官方为 Android 提供的集成开发环境，它取代了原先的 ADT 开发套件。你可以在 https://developer.android.google.cn/studio/index.html 获取到最新的 Android Studio 安装包。
 
-等待项目导入完成后，选择菜单 "build" => "generate signed apk"；选择module，下一步；选择你的签名文件，填入签名的密钥，选择应用昵称，输入密钥，下一步，选择导出目录，完成apk生成。
+### Android Studio 的安装与设置
+
+Android Studio 的安装很简单，安装完成还需进行 SDK 和 build tool 的下载。选择菜单 File => settings => Appearance & Behavior => System Settings => Android SDK，进入 Android SDK 设置界面，进行如下设置：
+
+（1）SDK Platforms：安装 Android 2.3.3 (Gingerbread) 或以上版本，如下图所示。
+
+![](sdkplatform.png)
+
+（2）SDK Tools：安装 Android SDK Build-Tools 最新版本，安装Android SDK Platform-Tools，安装Android SDK Tools 最新版本，如下图所示。
+
+![](sdktool.png)
+
+其中版本选择可以通过右下角的“Show package Details”展开选项进行选择，如下图所示。
+
+![](toolversion.png)
+
+Android SDK 设置完后，会自动联网下载安装包。待所有安装包安装完毕，就可以进行 Cocos2d-Lua 的项目导入了。
+
+### Cocos2d-Lua 项目导入与编译
+
+运行 Android Studio 在启动界面选择“Open an existing Android Studio project”，在弹出的文件夹选择器中选择 Cocos2d-Lua 项目目录下的 proj.android 文件夹，单机“OK”开始导入项目。在导入项目过程中，可能需要联网下载 Gradle，请耐心等待项目导入完成。
+
+工程导入后，需手动修正 proj.android/app/build.gradle 和 proj.android/libcocos2dx/build.gradle 中的 buildToolsVersion 为自己安装的 Android SDK Build-Tools 版本，如下所示：
+
+```
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.2'
+```
+
+> Android SDK Build-Tools 版本号查看方法参考前面。
+
+一切准备就绪，编译 apk 就很简单了。选择菜单 build => generate signed apk，选择 module，单机下一步；选择已准备的签名文件，填入签名的密钥，选择应用昵称，输入密钥，单机下一步；选择导出目录，完成 apk 生成。
