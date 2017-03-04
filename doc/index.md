@@ -29,6 +29,7 @@
 
 ## 网络
 
+* [HTTP 使用说明](./http/index.md)
 * [WebSocket 使用说明](./websocket/index.md)
 
 ## 发布
