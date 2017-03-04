@@ -81,7 +81,7 @@ CC_USE_3D := 1         # Cocos 3D 支持
 CC_USE_SQLITE := 1     # Sqlite 支持
 CC_USE_UNQLITE := 1    # UnQLite 支持
 CC_USE_PROTOBUF := 1   # Google protocol buffers 数据协议
-CC_USE_SPROTO := 1     # 风云的 Sproto 数据协议
+CC_USE_SPROTO := 1     # 云风的 Sproto 数据协议
 ```
 
 后面的备注已说明模块的作用，如需关掉，只需要把 1 改为 0，例如关闭 Sproto 支持：

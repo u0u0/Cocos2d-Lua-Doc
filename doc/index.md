@@ -36,6 +36,7 @@
 * [Quick-Cocos2dx-Community 在发布时加密lua源文件](./encryptlua/index.md)
 * [Quick-Cocos2dx-Community 在发布时加密资源文件](./encryptres/index.md)
 * [Android 项目的编译与打包](./buildapk/index.md)
+* [热更新Demo说明](./hotupdate/index.md)
 
 ## 其它
 
