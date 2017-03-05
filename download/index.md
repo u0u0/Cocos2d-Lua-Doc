@@ -4,7 +4,9 @@ github上的代码并不包含player的二进制包，你可以选择自行编�
 
 以发布时间倒序排列：
 
+* [Quick-Cocos2dx-Community 3.6.5](./3-6-5.md)
 * [Quick-Cocos2dx-Community 3.6.4](./3-6-4.md)
 * [Quick-Cocos2dx-Community 3.6.3](./3-6-3.md)
 * [Quick-Cocos2dx-Community 3.6.2](./3-6-2.md)
 * [Quick-Cocos2dx-Community 3.6.1](./3-6-1.md)
+* [Quick-Cocos2dx-Community 3.6](./3-6-0.md)
