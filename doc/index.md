@@ -41,6 +41,7 @@
 * [Quick-Cocos2dx-Community 在发布时加密资源文件](./encryptres/index.md)
 * [Android 项目的编译与打包](./buildapk/index.md)
 * [热更新Demo说明](./hotupdate/index.md)
+* [另一个纯Lua的热更新方案](https://github.com/uhoohei/jw_loader)
 
 ## 其它
 
