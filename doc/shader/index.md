@@ -114,10 +114,14 @@ local sprite = display.newSprite("2.png")
 	:center()
 	:addTo(self)
 
-local prog = cc.GLProgram:create("test.vert", "test.frag")
-prog:link()
-prog:updateUniforms()
-local progStat = cc.GLProgramState:create(prog)
+-- use shader cache of cocos2x cpp engine
+local prog = cc.GLProgramCache:getInstance():getGLProgram("myShader")
+if not prog then
+	prog = cc.GLProgram:createWithFilenames("test.vert", "test.frag")
+	cc.GLProgramCache:getInstance():addGLProgram(prog, "myShader")
+end
+
+local progStat = cc.GLProgramState:getOrCreateWithGLProgramName("myShader")
 progStat:setUniformVec2("v_mousePosition", cc.p(0.5, 0.5))
 sprite:setGLProgramState(progStat)
 ```
@@ -135,10 +139,3 @@ sprite:setGLProgramState(progStat)
 * setUniformInt
 * setUniformVec4
 * setUniformVec2
-
-## filter 滤镜
-
-Quick 有一组预设的 shader 特效，叫做 filter。
-通过Player的示例标签可以找到 filter 的demo，查看各种特效，filters 的参考代码在：
-
-`Quick-Cocos2dx-Community/quick/samples/filters/src/MainScene.lua`
