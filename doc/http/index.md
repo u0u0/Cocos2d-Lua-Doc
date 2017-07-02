@@ -1,12 +1,8 @@
 # HTTP 使用说明
 
-Quick中有2套HTTP接口，
+> Update to Quick-Cocos2dx-Community 3.7
 
-1. cc.XMLHttpRequest，对应Quick-Cocos2dx-Community/cocos/network/HttpClient
-2. cc.HTTPRequest，对应Quick-Cocos2dx-Community/quick/lib/quick-src/extra/network/CCHTTPRequest
-
-而 cc.HTTPRequest 又被封装为 network.createHTTPRequest，
-cc.HTTPRequest是Quick对HTTP的优化封装，特别为Android设计了Java HTTP方式，以避免进入CURL以及OpenSSL这两个庞大的库。
+network.createHTTPRequest是 Quick 对 HTTP 的优化封装，特别为 Android 设计了 Java HTTP 方式，以避免引入 CURL 以及 OpenSSL 这两个庞大的库。
 
 ## network.createHTTPRequest 用法
 
@@ -46,17 +42,15 @@ end
 
 -- post test
 local request = network.createHTTPRequest(onRequestCallback, "http://127.0.0.1:1234/hello", "POST")
---request:addPOSTValue("name", "laoliu")
+--request:addPOSTValue("name", "u0u0")
 request:setPOSTData("this is poststring to server!")
 request:start()
 ```
 
 ## Android 注意事项
 
-如果你要使用cc.HTTPRequest，必须在`frameworks/runtime-src/proj.android/libcocos2dx/jni/Application.mk`中开启`CC_USE_CURL := 1`。
+network.createHTTPRequest 无论是否开启CC_USE_CURL，都无法关闭。但是你可以选择它是用 curl 实现，还是用 Java 实现。
 
-network.createHTTPRequest 无论是否开启CC_USE_CURL，都无法关闭。但是你可以选择它是用curl实现，还是用Java实现。
+`CC_USE_CURL := 0` 使用 Java HTTP，如果设置为 1 则使用 curl HTTP。
 
-要减少apk包体积，是用`CC_USE_CURL := 0`配合 network.createHTTPRequest 访问HTTP即可。
-
-由于 Java HTTP 在实现过程中，异常处理不够严谨，在部分机器上会有崩溃问题，在 3.6.5中由社区贡献了一份加强版，可处理大部分异常。如果你在一些机器上遇到了java http的崩溃，欢迎反馈并提供修改方案。
+由于 Java HTTP 在实现过程中，异常处理不够严谨，在部分机器上会有崩溃问题，在 3.6.5中由社区贡献了一份加强版，可处理大部分异常。如果你在一些机器上遇到了 Java HTTP的崩溃，欢迎反馈并提供修改方案。

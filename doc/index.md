@@ -6,7 +6,7 @@
 
 * [手动绑定Lua接口](./luabinding/index.md)
 * [在 Lua 中使用 luaj 直接调用 Android 的 Java 代码](./luaj/index.md)
-* [在 Lua 中使用 luaoc 直接调用 Objective-C 代码](./luaoc/index.md)
+* [在 Lua 中使用 luaoc 直接调用 Objective-C 代码 **必读**](./luaoc/index.md)
 * [Quick-Cocos2dx-Community 中 64 位 Luajit 使用说明](./luajit/index.md)
 * [Quick 中使用的 Lua 数学库](./math/index.md)
 
@@ -22,7 +22,7 @@
 
 ## 工具
 
-* [Quick 社区版对 CocoStudio 的支持说明](./cocostudio/index.md)
+* [CocoStudio 使用说明](./cocostudio/index.md)
 * [Quick-Cocos2dx-Community 中的 protoc-gen-lua 使用说明](./protobuffer/index.md)
 
 ## Spine
@@ -38,10 +38,10 @@
 
 ## 发布
 
-* [Quick-Cocos2dx-Community 在发布时加密lua源文件](./encryptlua/index.md)
+* [Quick-Cocos2dx-Community 在发布时打包Lua代码](./encryptlua/index.md)
 * [Quick-Cocos2dx-Community 在发布时加密资源文件](./encryptres/index.md)
 * [Android 项目的编译与打包](./buildapk/index.md)
-* [热更新Demo说明](./hotupdate/index.md)
+* [3.6.5 热更新Demo说明](./hotupdate/index.md)
 * [另一个纯Lua的热更新方案](https://github.com/uhoohei/jw_loader)
 
 ## 其它

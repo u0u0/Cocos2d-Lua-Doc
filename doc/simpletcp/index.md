@@ -1,5 +1,7 @@
 # SimpleTCP 设计与实现
 
+> 从 Quick-Cocos2dx-Community 3.7 开始在 framework 中提供。
+
 Quick-Cocos2dx-Community 中集成了 LuaSocket，为网络游戏提供 Socket 层的连接支撑。
 
 LuaSocket 本身是跨平台的封装，支持 TCP/UDP，但本身使用并不方便。于是 Quick 中集成了一个 SocketTCP的高层封装模块，用来提高易用性。SocketTCP 最早来源于 Quick 论坛中的一份实现，后被 zrong 改进，而 Quick 社区版进一步改进了 IPV6 的网络适应与轮训频率。不过 SocketTCP 的代码质量依然不高，3个调度器直接的切换让人看得眼花缭乱。本着精益求精的精髓，我着手重新设计 TCP 的封装层，并命名为 SimpleTCP。

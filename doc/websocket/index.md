@@ -9,7 +9,7 @@ Cocos2d-x 引擎集成 libwebsockets，并在 libwebsockets 的客户端 API 基
 创建一个网络连接如下：
 
 ```
-socket = cc.WebSocket:create(url)
+local socket = cc.WebSocket:create(url)
 ```
 
 网络通信的异步状态回调需要注册事件回调函数：

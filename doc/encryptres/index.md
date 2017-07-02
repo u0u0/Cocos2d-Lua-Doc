@@ -1,47 +1,67 @@
 # Quick-Cocos2dx-Community 在发布时加密资源文件
 
-在 3.6 中，新增加`Quick-Cocos2dx-Community/quick/bin/encrypt_res/encrypt_res`，用于加密图片资源。
-下面展示如何在发布游戏的时候使用encrypt_res加密资源。
+> Update to Quick-Cocos2dx-Community 3.7
 
-示例环境：
+在3.7中，game32.zip将视为资源，使用同一套加密方式。
 
-* 引擎版本：Quick-Cocos2dx-Community 3.6
-* 演示平台：Mac with Xcode on iOS
+## 示例
 
-encrypt_res使用过程如下：
+```
+$/xxx/Quick-Cocos2dx-Community/quick/bin/EncodeRes.py -p /Users/u0u0/Desktop/testProject -s ASig -k /Users/u0u0/Desktop/key.png
+```
 
-1. 打开Terminal，切换到项目目录下。
+新的加密脚本以文件作为key，支持二进制的key。事实上xxtea加密的key固定位16个字节128bit，也就是只取文件的前16字节作为key来加密。
 
-    $cd /Users/u0u0/Documents/project/quick_project/test
+例中，加密 res 资源文件下的二进制数据（参考py脚本中的过滤），原未加密的文件会备份到res_bk文件夹。
 
-    > 注：/Users/u0u0/Documents/project/quick_project/test 为我用 player 建立的项目根路径。
+在AppDelegate.cpp中加入解码信息。
 
-2. 运行Quick提供的 encrypt_res.sh 工具。
+```
+FileUtils::getInstance()->setFileDataDecoder(decoder);
+```
 
-    $/Users/u0u0/Documents/quick-comminuty/quick/bin/encrypt_res.sh -i res -o resnew -es XXTEA -ek test
+3.7使用外部解码函数嵌入到引擎的file移植层的方式来提供自定义解码方案，也就是你可以用自己的加密方案和解密方案来替换引擎的默认方案，灵活性更高。
 
-    encrypt_res.sh 可以在 Quick 安装路径下找到，需要输入全路径。参数详情如下：
+AppDelegate中提供默认的解码函数。实现如下：
 
-    * -h 帮助
-    * -i 原资源目录名
-    * -o 目标目录名
-    * -p 包前缀
-    * -ek 加密密钥
-    * -es 加密签名
-    * -q 生成过程不输出信息
+```
+static void decoder(Data &data)
+{
+    unsigned char sign[] = "ASig";
+    unsigned char key[16] = {
+        0x89, 0x50, 0x4E, 0x47,
+        0x0D, 0x0A, 0x1A, 0x0A,
+        0x00, 0x00, 0x00, 0x0D,
+        0x49, 0x48, 0x44, 0x52
+    };
 
-    上例中，加密 res 资源文件下的所有图片，并输出到 resnew 目录，加密密钥：test，加密签名：XXTEA。
+    // decrypt XXTEA
+    if (!data.isNull()) {
+        bool isEncoder = false;
+        unsigned char *buf = data.getBytes();
+        ssize_t size = data.getSize();
+        ssize_t len = strlen((char *)sign);
+        if (size <= len) {
+            return;
+        }
 
-    > 注：未加密的文件会直接拷贝到resnew。
+        for (int i = 0; i < len; ++i) {
+            isEncoder = buf[i] == sign[i];
+            if (!isEncoder) {
+                break;
+            }
+        }
 
-3. res文件夹更名为res_unEncrypt，resnew文件夹更名为res。
-
-4. 在AppDelegate.cpp中加入解码信息。
-
-    打开 /Users/u0u0/Documents/project/quick_project/test/frameworks/runtime-src/Classes/AppDelegate.cpp，在启动 Lua main入口前加入下面的代码。
-
-    ```
-    FileUtils::getInstance()->setResourceEncryptKeyAndSign("test", "XXTEA");
-    ```
-
-5. 同未加密之前一样编译项目进行测试。
+        if (isEncoder) {
+            xxtea_long newLen = 0;
+            unsigned char* buffer = xxtea_decrypt(buf + len,
+                                                  (xxtea_long)(size - len),
+                                                  (unsigned char*)key,
+                                                  (xxtea_long)sizeof(key),
+                                                  &newLen);
+            data.clear();
+            data.fastSet(buffer, newLen);
+        }
+    }
+}
+```
