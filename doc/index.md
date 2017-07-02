@@ -14,6 +14,10 @@
 
 * [自定义 Shader 的使用](./shader/index.md)
 
+## 音频
+
+* [基于 OpenAL 的 audio engine](./audio/index.md)
+
 ## 代码编辑器
 
 * [搭建基于Vim的Cocos2d-Lua开发环境](./vim/index.md)

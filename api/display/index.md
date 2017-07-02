@@ -152,7 +152,7 @@ transitionType:
 
 创建层。
 
-> 注意：这个层其实是一个Node，用来接收Quick触摸事件。
+> 注意：3.7中，层和节点已经没有区别。
 
 参数：无。
 
@@ -163,8 +163,6 @@ transitionType:
 `display.newColorLayer(color)`
 
 创建颜色层。
-
-> 注意：这个层其实是一个Node，而真正显示颜色的`cc.LayerColor`是Node的一个子节点。
 
 | 参数名 | 类型 |说明|
 |----|---|----|
