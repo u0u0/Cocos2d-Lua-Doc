@@ -7,7 +7,7 @@
 ## 网购通道
 
 * 第一版：[京东](http://item.jd.com/11792827.html) [亚马逊](https://www.amazon.cn/gp/product/B01777XLV8) [淘宝](https://s.taobao.com/search?q=Cocos2d-x+%E4%B9%8B+lua+%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B) [当当](http://product.dangdang.com/23800863.html)
-* 第二版：coming soon
+* 第二版：[亚马逊](https://www.amazon.cn/dp/B073LWNDP6/)
 
 ## 配套代码下载
 
@@ -38,7 +38,7 @@
 
 ## 适用的 Cocos2d-Lua 版本
 
-* 第一版 适用于 Cocos2d-Lua v3.3 Final 以及 Quick-Cocos2dx-Community 3.6 ～ 3.6.3。
-* 第二版 适用于 Quick-Cocos2dx-Community 3.6.4 ～ 3.6.5。
+* 第一版，第1-7章适用于 Cocos2d-Lua v3.3 Final 以及 Quick-Cocos2dx-Community 3.6 ～ 3.6.5，第8章打包适用于3.3、3.6 ～ 3.6.3。
+* 第二版，第1-7章适用于 Cocos2d-Lua v3.3 Final 以及 Quick-Cocos2dx-Community 3.6 ～ 3.6.5，第8章打包适用于 Quick-Cocos2dx-Community 3.6.4 ～ 3.6.5。
 
 [引擎下载](../download/index.md)
