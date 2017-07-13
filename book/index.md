@@ -2,7 +2,7 @@
 
 |第二版封面|第一版封面|
 |----|---|
-| ![Cocos2d Lua Book](./book.jpg) | ![Cocos2d Lua Book](./book.jpg) |
+| ![Cocos2d Lua Book](./book2.jpg) | ![Cocos2d Lua Book](./book.jpg) |
 
 ## 网购通道
 
