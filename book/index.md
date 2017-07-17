@@ -7,7 +7,7 @@
 ## 网购通道
 
 * 第一版：[京东](http://item.jd.com/11792827.html) [亚马逊](https://www.amazon.cn/gp/product/B01777XLV8) [淘宝](https://s.taobao.com/search?q=Cocos2d-x+%E4%B9%8B+lua+%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B) [当当](http://product.dangdang.com/23800863.html)
-* 第二版：[亚马逊](https://www.amazon.cn/dp/B073LWNDP6/)
+* 第二版：[亚马逊](https://www.amazon.cn/dp/B073LWNDP6/) [淘宝](https://detail.tmall.com/item.htm?id=555428999795)
 
 ## 配套代码下载
 
