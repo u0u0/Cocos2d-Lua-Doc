@@ -12,6 +12,7 @@
 
 ## 渲染
 
+* [裁剪](./clipping/index.md)
 * [自定义 Shader 的使用](./shader/index.md)
 
 ## 音频
