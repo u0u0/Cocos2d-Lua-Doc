@@ -75,8 +75,8 @@ function MainScene:ctor()	display.newColorLayer(cc.c4b(20, 9, 39, 255)):addTo(s
 
 ## ccui.Layout 与 cc.ClippingNode
 
-ccui 中的基础类 ccui.Layout 也使用裁剪，默认 ccui.Layout 使用`GL_STENCIL_TEST`做矩形裁剪，可通过setClippingType进行切换。**但不建议切换为SCISSOR**，测试中发现某些情况下，ccui.Layout 的 SCISSOR 裁剪区域算法不对。
+ccui 中的基础类 ccui.Layout 也使用裁剪，SCISSOR的bug已在3.7.1中修正，并设置为默认裁剪方式。
 
-需要注意的是，如果在 ccui.Layout 中使用了 cc.ClippingNode，会导致渲染效果异常，这是由于STENCIL嵌套导致的bug，目前还未找到解决的办法。
+需要注意的是，如果 ccui.Layout 使用`GL_STENCIL_TEST`做裁剪，然后又嵌套使用了 cc.ClippingNode，会导致渲染效果异常，这是由于STENCIL嵌套导致的bug，目前还未找到解决的办法。
 
 建议需要用 cc.ClippingNode 的地方使用自定义shader来实现同样的裁剪功能。
