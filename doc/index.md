@@ -12,6 +12,7 @@
 
 ## 渲染
 
+* [LabelTTF与RichText的扩展](./richtext/index.md)
 * [裁剪](./clipping/index.md)
 * [自定义 Shader 的使用](./shader/index.md)
 
