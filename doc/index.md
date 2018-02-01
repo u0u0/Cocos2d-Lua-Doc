@@ -48,6 +48,7 @@
 * [Quick-Cocos2dx-Community 在发布时打包Lua代码](./encryptlua/index.md)
 * [Quick-Cocos2dx-Community 在发布时加密资源文件](./encryptres/index.md)
 * [Android 项目的编译与打包](./buildapk/index.md)
+* [从命令行编译 Android Studio 项目](./buildapk/console.md)
 * [3.6.5 热更新Demo说明](./hotupdate/index.md)
 * [3.7纯Lua热更新方案](./hotupdate/luaupdater.md)
 

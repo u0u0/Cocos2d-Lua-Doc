@@ -16,7 +16,7 @@
 
 可在`https://github.com/u0u0/Lua-utils/blob/master/src/app/utils/Updater.lua`获取热更新核心逻辑代码。配套脚本工具位`https://github.com/u0u0/Lua-utils/blob/master/tools/GenResMD5.py`.
 
-GenResMD5.py拷贝到项目的res同级目录下，命令行运行自动生成versong.json文件。
+GenResMD5.py拷贝到项目的res同级目录下，命令行运行自动生成version.json文件。
 
 用法示例：
 
