@@ -111,7 +111,7 @@ connection closing..
 package main
 
 import (
-	"code.google.com/p/go.net/websocket"
+	"golang.org/x/net/websocket" // go get github.com/golang/net/websocket
 	"log"
 	"net/http"
 )
