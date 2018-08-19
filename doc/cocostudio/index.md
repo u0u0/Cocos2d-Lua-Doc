@@ -1,16 +1,14 @@
 # CocoStudio 使用说明
 
-> Update to Quick-Cocos2dx-Community 3.7
+> Update to Quick-Cocos2dx-Community 3.7.3
 
 ## CocoStudio 版本
 
 Studio 按版本可分为两大类，即 Studio1.x（Studio一代）和 Studio2.x（Studio二代）。
 
-社区版引擎基于 Quick-Cocos2d-x3.3 final，官方给出的对应的 Studio 版本为 2.x 中的 v2.0.6。更高版本的 Studio 在该引擎中也不是一定不能用，但兼容性肯定不好，所以不建议使用。
+Quick-Cocos2dx-Community 3.7.3 支持 1.6 和 3.10 两个版本的 studio编辑器。
 
-社区版引擎中也支持低版本的 Studio1.x 数据。如果在社区版中要使用低版本的 Studio1.x 数据，建议使用相对稳定且比较经典的 Studio 1.6 作为编辑器。
-
-Studio v2.0.6中没有骨骼动画模块，所以当应用程序中涉及到骨骼动画的时候，可以考虑使用以上所说的低版本的 Studio 1.6，更或是你也可以放弃 Studio 选择 Spine。
+> CocosStudio 3.10 其实也是 Studio2.x 系列。
 
 ## 加载 CocoStudio 1.x 资源
 
@@ -41,9 +39,11 @@ armature:getAnimation():play("walk")            -- 设置动画对象执行的�
 self:addChild(armature)
 ```
 
-## 加载 CocoStudio 2.0.6 资源
+## 加载 CocoStudio 3.10 资源
 
-Studio2.x 的 csb 加载方式有所改变，它使用的是 CSLoader 来加载，加载之后的UI为cocos2dx 3.x的最新UI框架，ccui。
+> 注：社区版整个runtime不支持编辑器的所有3D功能。另外310的骨骼动画也没经过测试，谨慎使用。推荐只使用Node方式新建文件，来解决UI布局问题。
+
+Studio2.x 的 csb 加载方式有所改变，它使用的是 CSLoader 来加载，加载之后的UI 为 cocos2dx 3.x 的最新 UI 框架 ccui。
 
 示例：
 
@@ -54,6 +54,6 @@ csbNode:addTo(self)
 
 ### CocoStudio 下载地址
 
-- CocosStudioForMac-v2.0.6.dmg 链接:[https://pan.baidu.com/s/1gfN43mz](https://pan.baidu.com/s/1gfN43mz)
-- CocosStudioForWin-v2.0.6.exe 链接: [https://pan.baidu.com/s/1qXEi5is](https://pan.baidu.com/s/1qXEi5is)
+- CocosForMac-v3.10.dmg 链接:[https://pan.baidu.com/s/1xB7ETHj99Kiis9EKaLFhwg](https://pan.baidu.com/s/1xB7ETHj99Kiis9EKaLFhwg)
+- CocosForWin-v3.10.exe 链接: [https://pan.baidu.com/s/1wL6ptpm7VXOdf7e2ZzT6iw](https://pan.baidu.com/s/1wL6ptpm7VXOdf7e2ZzT6iw)
 - CocosStudio_v1.6.0.0.exe 链接: [https://pan.baidu.com/s/1pKAgMAB](https://pan.baidu.com/s/1pKAgMAB)

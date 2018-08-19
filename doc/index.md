@@ -34,8 +34,8 @@
 
 ## Spine
 
-* [Quick-Cocos2d-x 社区版 spine 新增 Lua 绑定接口说明](./spine/binding/index.md)
-* [Quick-Cocos2d-x spine 新增 sp.SkeletonData 对象使用说明](./spine/skeletondata/index.md)
+* [Spine 基本用法](./spine/basic/index.md)
+* [Spine 进阶接口](./spine/advance/index.md)
 
 ## 网络
 
