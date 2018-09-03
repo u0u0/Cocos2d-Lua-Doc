@@ -1,6 +1,6 @@
 # Spine 进阶接口
 
-Spine 3.6 runtime，部分接口有变化，~~setFlippedX~~ 和 ~~setFlippedY~~ 已被去掉，你可以用 setScaleX(-1) 和 setScaleY(-1) 来实现。
+Spine 3.6 runtime 由于数据结构改动，  ~~findSlot~~ 的绑定接口暂时去掉。
 
 ## findAnimation
 
@@ -34,9 +34,7 @@ local hero = sp.SkeletonAnimation:create("build_yellowlightfinished.json", "buil
 hero:setAttachment("changegun", "pc_gungirl_crossbow3")
 ```
 
-## 获取 bone 信息接口 findBone
-
-由于新 runtime 数据结构改动，  ~~findSlot~~ 的绑定接口暂时去掉了。
+## findBone 和 updateBone
 
 findBone 为社区版手动绑定，返回 table 提供给开发者，这样可有效避免内存管理混乱的问题。
 目前只暴露了部分有用的信息。
@@ -47,13 +45,18 @@ findBone 为社区版手动绑定，返回 table 提供给开发者，这样可�
 dump(hero:findBone("changegun"))
 ```
 
-output:
+updateBone 为社区版手动绑定(3.7.3新增)，用来更新Bone信息，在没有k帧的时候，可以达到某些特殊功能的实现。
+
+接口示例：
 
 ```
-[LUA-print] - "<var>" = {
-[LUA-print] -     "x" = 1
-[LUA-print] -     "y" = 1
-[LUA-print] -     "worldX"     = 15.590363502502
-[LUA-print] -     "worldY"     = -29.508033752441
-[LUA-print] - }
+dump(hero:updateBone("rear-upper-arm", {
+	x = 0,
+	y = 0,
+	rotation = 90.0,
+	scaleX = 2,
+	scaleY = 1,
+	shearX = 10,
+	shearY = 10,
+}))
 ```
