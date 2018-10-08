@@ -24,6 +24,7 @@
 ## 代码编辑器
 
 * [搭建基于Vim的Cocos2d-Lua开发环境](./vim/index.md)
+* [vscode版QuickXDev](https://github.com/leitwolf/vscode-QuickXDev)
 * [Sublime的quick-community-dev插件安装](./sublime/index.md)
 * [基于vscode的Luaide](https://github.com/k0204/LuaIde/wiki)
 
