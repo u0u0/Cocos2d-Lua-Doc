@@ -41,7 +41,7 @@ end)
 
 sizeSource 是用来性能优化的，每个item的大小可以不一样，根据自己的实际场景返回cc.size.
 
-loadSoruce 是加载真正的item回到，你创建自己的显示内容，并返回。
+loadSoruce 是加载真正的item的回调，你创建自己的显示内容，并返回。
 
 unloadSoruce 是当某个item移出屏幕之外被调用的回调，你可以在这里释放图片资源。
 
