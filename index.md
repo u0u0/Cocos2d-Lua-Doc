@@ -9,6 +9,7 @@ Quick-Cocos2dx-Community 具有 Cocos2d-x 和 Quick-Cocos2d-x 的所有优点。
 [http://www.cocos2d-lua.org/](http://www.cocos2d-lua.org/)
 
 **社区版 千人群(1群)号：361920466**
+
 **社区版 2群：138934064**
 
 ## 相关开源仓库地址
