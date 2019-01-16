@@ -9,6 +9,7 @@
 * [在 Lua 中使用 luaoc 直接调用 Objective-C 代码](./luaoc/index.md)
 * [Quick-Cocos2dx-Community 中 64 位 Luajit 使用说明 **[必读]**](./luajit/index.md)
 * [Quick 中使用的 Lua 数学库](./math/index.md)
+* [纯Lua事件分发模块](./event/index.md)
 
 ## 渲染
 
