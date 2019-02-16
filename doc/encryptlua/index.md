@@ -43,6 +43,8 @@ $/xxxx/Quick-Cocos2dx-Community/quick/bin/PackageScripts.py -p /Users/u0u0/Deskt
 
 大部分过程和iOS相同，不同点在第3条，Android修改资源的引用分下面三个步骤：
 
-1. 运行BuildNative脚本，让资源自动拷贝到assert目录。
-2. 进入assert目录，手动删除lua源代码文件，保留game.zip
-3. 用ant或Android Studio打包apk。
+1. 运行 build_native.py -r 脚本，自动拷贝 res 到assert目录。
+	
+	> 注：-r 模式只会拷贝 res。
+
+2. 用 Android Studio打包apk。
