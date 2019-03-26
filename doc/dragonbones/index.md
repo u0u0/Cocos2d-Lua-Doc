@@ -11,8 +11,12 @@
 以下示例用法对照 DragonBonesCPP demo 的 [AnimationLayer.h](https://github.com/DragonBones/DragonBonesCPP/blob/master/Cocos2DX_3.x/Demos/Classes/AnimationLayer.h), 进行的一比一 Lua 封装测试。包含了 dragonBones 创建、动画播放、多动画融化与骨骼屏蔽、事件回调。骨骼资源可以去 DragonBonesCPP 仓库获取。
 
 ```
-dragonBones.CCFactory:loadDragonBonesData("mecha_1004d/mecha_1004d_ske.json")
-dragonBones.CCFactory:loadTextureAtlasData("mecha_1004d/mecha_1004d_tex.json")
+-- json 只需解析一次, runtime 自带 cache 功能
+if not app._isLoaded then
+	dragonBones.CCFactory:loadDragonBonesData("mecha_1004d/mecha_1004d_ske.json")
+	dragonBones.CCFactory:loadTextureAtlasData("mecha_1004d/mecha_1004d_tex.json")
+	app._isLoaded = true
+end
 local db = dragonBones.CCFactory:buildArmatureDisplay("mecha_1004d")
 local ani = db:getAnimation()
 ani:play("walk") -- 用于第一次播放
