@@ -18,6 +18,7 @@ if not app._isLoaded then
 	app._isLoaded = true
 end
 local db = dragonBones.CCFactory:buildArmatureDisplay("mecha_1004d")
+self.db = db
 local ani = db:getAnimation()
 ani:play("walk") -- 用于第一次播放
 db:addDBEventListener("loopComplete", function(event)
@@ -37,3 +38,30 @@ db:addTo(self):center()
 ## 运行画面
 
 ![dragonbones.png](./dragonbones.png)
+
+## 内存管理
+
+龙骨有一套自己的对象池管理机制，buildArmatureDisplay返回的`dragonBones.CCArmatureDisplay` 对象，是继承于cc.Node的，但是cc.Node的removeSelf并不回释放整个节点。你还需要手动调用dispose接口。
+
+```
+self.db:dispose()
+-- removeSelf可以不掉用，db的父节点销毁会自动调用
+self.db:removeSelf()
+```
+
+如果不掉用dispose，你可以实现切换db的父节点，而不丢失状态。
+
+> 注意：如果你所有创建的db都需要手动调用dispose来清理内存。
+
+在db进行dispose之后，方可以安全清理json缓存.
+
+```
+-- 全清
+dragonBones.CCFactory:clear()
+```
+
+```
+-- 指定清除
+dragonBones.CCFactory:removeDragonBonesData("mecha_1004d")
+dragonBones.CCFactory:removeTextureAtlasData("mecha_1004d")
+```
