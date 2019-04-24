@@ -21,8 +21,8 @@ Quick-Cocos2dx-Community 集成 protoc-gen-lua 方案，并做以下修正：
 
 ## 下载地址
 
-* [protoc-gen-lua-mac.zip](https://pan.baidu.com/s/1gsg4eRA5vAzWEx-T9EqQVA)
-* [protoc-gen-lua-win32.zip](https://pan.baidu.com/s/1aSdvL4XWg8N5vTceDxHtgQ)
+* [protoc-gen-lua-mac.zip](https://pan.baidu.com/s/1g2c4CAT4aa_28tPfZWbO1A)
+* [protoc-gen-lua-win32.zip](https://pan.baidu.com/s/1VWXTWC7Ig0Ytso9h1Q5J2w)
 
 ## 安装
 
