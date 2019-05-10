@@ -46,13 +46,13 @@ SimpleTCP 内部按照下面的状态图而设计，理解图就理解了 Simple
 1. 导入模块
 
 	```
-	local SimpleTCP = require("framework.cc.net.SimpleTCP")
+	local SimpleTCP = require("framework.SimpleTCP")
 	```
 
 2. 创建对象（类方法）
 
 	```
-	self.stcp = SimpleTCP.new("192.168.0.27", 1234, handler(self, self.onTCPEvent))
+	self.stcp = SimpleTCP.new("127.0.0.1", 1234, handler(self, self.onTCPEvent))
 	```
 
 	* 参数1：服务器地址（IPV6下，建议都是用域名）
@@ -86,19 +86,19 @@ local MainScene = class("MainScene", function()
 	return display.newScene("MainScene")
 end)
 
-local SimpleTCP = require("framework.cc.net.SimpleTCP")
+local SimpleTCP = require("framework.SimpleTCP")
 
 function MainScene:ctor()
-	self.stcp = SimpleTCP.new("192.168.0.27", 1234, handler(self, self.onTCPEvent))
+	self.stcp = SimpleTCP.new("127.0.0.1", 1234, handler(self, self.onTCPEvent))
 	self.stcp:connect()
 
 	-- Reconnect
-	local button = display.newSprite("connect.png"):center():addTo(self)
-	button:setTouchEnabled(true)
-	button:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
-		if event.name == "began" then
+	local btn = ccui.Button:create():center():addTo(self)
+	btn:setTitleText("connect")
+	btn:setTitleFontSize(40)
+	btn:addTouchEventListener(function(ref, eventType)
+		if cc.EventCode.ENDED == eventType then
 			self.stcp:connect()
-			return true
 		end
 	end)
 
@@ -134,8 +134,6 @@ end
 return MainScene
 ```
 
-## 代码下载
-
-[SimpleTCP](./SimpleTCP.lua)
+## 测试服务器代码
 
 [Go测试服务器代码](./main.go)
