@@ -16,6 +16,7 @@
 * [LabelTTF与RichText的扩展](./richtext/index.md)
 * [裁剪](./clipping/index.md)
 * [自定义 Shader 的使用](./shader/index.md)
+* [基于ccui.ScrollView的TableView实现](./tableview/pro.md)
 * [基于ccui.ListView的TableView实现](./tableview/index.md)
 
 ## 音频
