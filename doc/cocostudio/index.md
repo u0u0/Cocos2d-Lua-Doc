@@ -1,16 +1,16 @@
-# CocoStudio 使用说明
+# Cocos Studio 使用说明
 
 > Update to Quick-Cocos2dx-Community 3.7.3
 
-## CocoStudio 版本
+## Cocos Studio 版本
 
 Studio 按版本可分为两大类，即 Studio1.x（Studio一代）和 Studio2.x（Studio二代）。
 
 Quick-Cocos2dx-Community 3.7.3 支持 1.6 和 3.10 两个版本的 studio编辑器。
 
-> CocosStudio 3.10 其实也是 Studio2.x 系列。
+> Cocos Studio 3.10 其实也是 Studio2.x 系列。
 
-## 加载 CocoStudio 1.x 资源
+## 加载 Cocos Studio 1.x 资源
 
 示例：
 
@@ -39,7 +39,7 @@ armature:getAnimation():play("walk")            -- 设置动画对象执行的�
 self:addChild(armature)
 ```
 
-## 加载 CocoStudio 3.10 资源
+## 加载 Cocos Studio 3.10 资源
 
 > 注：社区版整个runtime不支持编辑器的所有3D功能。另外310的骨骼动画也没经过测试，谨慎使用。推荐只使用Node方式新建文件，来解决UI布局问题。
 

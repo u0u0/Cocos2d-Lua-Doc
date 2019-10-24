@@ -158,6 +158,7 @@ ctags 与 vim结合非常强大，但是ctags官方对Lua的解析非常糟糕�
 在src根目录下新建一个`.ctags`文件，其内容如下：
 
 ```
+--sort=0
 --langdef=MYLUA
 --langmap=MYLUA:.lua
 --regex-MYLUA=/^local[ \t]+([a-zA-Z0-9_]+)[ \t]*=[ \t]*\{/\1/v,var/

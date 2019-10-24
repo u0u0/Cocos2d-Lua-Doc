@@ -33,6 +33,7 @@
 ## 工具
 
 * [CocoStudio 使用说明](./cocostudio/index.md)
+* [Cocos Studio 垂死挣扎Lua版](./cocostudio/mod.md)
 * [Quick-Cocos2dx-Community 中的 protoc-gen-lua 使用说明](./protobuffer/index.md)
 
 ## 骨骼动画
