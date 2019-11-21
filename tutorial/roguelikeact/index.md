@@ -1,5 +1,7 @@
 # Roguelike横板动作类游戏开发总结
 
+> 作者:[生前何必久睡死后必定长眠](https://blog.csdn.net/qq_41526338)
+
 ## 使用的工具
 
 * Quick-Cocos2dx-Community 3.7.7 (游戏引擎)
@@ -20,6 +22,10 @@
 - *玩家操作系统*
 - *存档系统*
 
+## 源码下载
+
+链接: [thetriaroadgame.zip](https://pan.baidu.com/s/1Lxjqaj2C6Bi-HR2gZDG4uA) 提取码: 2jph 
+
 ## 人物动作系统
 
 ### 一. 状态模式[^REFERENCE1]
@@ -37,6 +43,7 @@
 - 当无操作输入时自动进入站立状态.
 
 *状态之间的关系如图所示 :*
+
 ![states.png](./states.png)
 
 *实现思路 :*
@@ -167,8 +174,8 @@ roleOfPlayer:setPosition(roleOfPlayer:getPositionX() - moveSpeed, roleOfPlayer:g
 ```
 
 **效果如下 :**
-![move.gif](./2.gif)
 
+![move.gif](./2.gif)
 
 ### 四. 存在的缺陷
 
@@ -273,7 +280,8 @@ end
             1. 关闭被选中特效
 2. 配置表:
 	1. 表中应有属性独有的Id,名称,是否已经解锁,解锁的前置条件,所需属性点的个数,属性最大等级,当前等级,属性参数等关键值
-	如图所示 :![config.png](./config.png)
+	如图所示 :
+	![config.png](./config.png)
 3. 交互界面与配置表之间的联动
 	在脚本中通过拷贝的方式引入配置表后将其上的数据与属性按钮绑定,每一次点击过后将该属性对应的数据进行更新,在更新过数据后,刷新UI界面完成交互效果
 4. 存储已经点击了的属性
@@ -282,7 +290,6 @@ end
 **实现效果如下:**
 
 ![telent.gif](./5.gif)
-
 
 ## 玩家操作系统
 
