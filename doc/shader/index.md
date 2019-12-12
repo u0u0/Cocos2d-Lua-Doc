@@ -123,6 +123,8 @@ end
 
 local progStat = cc.GLProgramState:getOrCreateWithGLProgramName("myShader")
 progStat:setUniformVec2("v_mousePosition", cc.p(0.5, 0.5))
+-- 部分预乘的图片，需要gl.SRC_ALPHA,才能让片段着色器中修改gl_FragColor.a值生效
+sprite:setBlendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
 sprite:setGLProgramState(progStat)
 ```
 

@@ -1,8 +1,8 @@
-# Quick-Cocos2dx-Community - Cocos2d-Lua 社区版
+# Cocos2d-x Lua 社区版
 
-Quick-Cocos2dx-Community 发展自用户公认的最稳定版本 Quick-Cocos2d-x v3.3。作为 Cocos2d-x 的 Lua 用户，我们并不赞成 Lua 分支合并到Cocos2d-x主版本中，也不需要工程中包含js等部分。
+随 Cocos2d-x v4.0的发布，全新的架构带来了Metal的支持，社区版将在此基础上，融合原先Quick引擎的优点，进行社区版的4.0打造。
 
-Quick-Cocos2dx-Community 具有 Cocos2d-x 和 Quick-Cocos2d-x 的所有优点。并在 Quick-Cocos2d-x 基础上更新了最新的平台和第三方功能。让开发者可以用更低的成本、更高的开发效率、更省的人力成本创造高品质手游产品。
+Cocos2d-x Lua 社区版是在Cocos2d-x的基础上，关注于Lua进行游戏开发的引擎框架变种，意在减少重复造轮子，节省开发人员的时间。
 
 ## 网站
 
@@ -14,13 +14,14 @@ Quick-Cocos2dx-Community 具有 Cocos2d-x 和 Quick-Cocos2d-x 的所有优点。
 
 ## 相关开源仓库地址
 
-* 引擎代码仓库: [Quick-Cocos2dx-Community](https://github.com/u0u0/Quick-Cocos2dx-Community)
+* 4.0 引擎代码仓库: [Cocos2d-Lua](https://github.com/u0u0/Cocos2d-Lua)
+* 3.7 引擎代码仓库: [Quick-Cocos2dx-Community](https://github.com/u0u0/Quick-Cocos2dx-Community)
 * 第三方库编译框架: [Quick-3rd-party-libs](https://github.com/u0u0/Quick-3rd-party-libs)
 * vim开发插件: [vim-quick-community](https://github.com/u0u0/vim-quick-community)
 * sublime开发插件: [quick-comminuty-dev](https://github.com/u0u0/quick-comminuty-dev)
 * protoc-gen-lua: [protoc-gen-lua-bin](https://github.com/u0u0/protoc-gen-lua-bin)
 
-## 快速安装指南
+## 3.7 快速安装指南
 
 1. 下载 Quick-Cocos2dx-Community 最新版，并解压到一个路径。
 
