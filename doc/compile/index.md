@@ -51,4 +51,7 @@ $open test.xcodeproj
 
 ## 编译 Win32
 
-TODO
+```
+mkdir win32-build
+cd win32-buildcmake .. -G"Visual Studio 15 2017"cmake --build .
+```

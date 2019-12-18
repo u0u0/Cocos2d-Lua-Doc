@@ -1,6 +1,6 @@
 # Roadmap
 
-随着Apple Metal的发布，OpenGL ES 在将来的某一天有被抛弃的可能性。于此同时Google 也有对应的下一代图像驱动 Vulken。Cocos2d-x 3.0 的架构是与OpenGL深绑定的实现方式，不大刀很难去适配新的图形驱动。Cocos2d-x 4.0 在本月发布了第一个Release版本，对渲染框架做了大改动，有一个中间层来屏蔽各平台差异，目前已经支持OpenGL 和 Metal，而Vulken的支持在将来也不是困难。
+随着Apple Metal的发布，OpenGL ES 在将来的某一天有被抛弃的可能性。于此同时Google 也有对应的下一代图像驱动 Vulken。Cocos2d-x 3.0 的架构是与OpenGL深绑定的实现方式，不大刀很难去适配新的图形驱动。Cocos2d-x 4.0 在本月发布了第一个Release版本，对渲染框架做了大改动，有一个中间层来屏蔽各平台差异，目前已经支持OpenGL 和 Metal，而Vulkan的支持在将来也不是困难。
 
 Cocos2d-x 4.0 去掉了JS系统，保留Lua和CPP开发。Cocos官方在版本上终于进行了区分，creator与Cocos2d-x 4.0定位上做了划分。针对native的游戏开发，Cocos2d-x 4.0高可定制性，依然是一个值得关注的版本，社区引擎将持续跟进Cocos2d-x 4.0的发展。
 
