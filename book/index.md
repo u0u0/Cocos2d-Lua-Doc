@@ -6,7 +6,7 @@
 
 ## 网购通道
 
-* Cocos2d-x游戏开发 手把手教你Lua语言的编程方法：[京东](https://item.jd.com/12612857.html) [淘宝](https://s.taobao.com/search?q=手把手教你Lua语言的编程方法) [当当](http://product.dangdang.com/1576106788.html) 
+* Cocos2d-x游戏开发 手把手教你Lua语言的编程方法：[京东](https://item.jd.com/12612857.html) [淘宝](https://s.taobao.com/search?q=手把手教你Lua语言的编程方法) [当当](http://product.dangdang.com/28501052.html) 
 * Cocos2d-x之Lua核心编程(第2版)：[京东](https://item.jd.com/12223508.html) [亚马逊](https://www.amazon.cn/dp/B073LWNDP6/) [淘宝](https://s.taobao.com/search?q=Cocos2d-x+之+Lua+核心编程+第2版) [当当](http://product.dangdang.com/25112631.html)
 * Cocos2d-x之Lua核心编程：[京东](http://item.jd.com/11792827.html) [亚马逊](https://www.amazon.cn/gp/product/B01777XLV8) [淘宝](https://s.taobao.com/search?q=Cocos2d-x+%E4%B9%8B+lua+%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B) [当当](http://product.dangdang.com/23800863.html)
 
