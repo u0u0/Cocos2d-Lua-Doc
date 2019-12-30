@@ -14,7 +14,7 @@ Cocos2d-x Lua 社区版是在Cocos2d-x的基础上，关注于Lua进行游戏开
 
 ## 相关开源仓库地址
 
-* 4.0 引擎代码仓库: [Cocos2d-Lua](https://github.com/u0u0/Cocos2d-Lua)
+* 4.0 引擎代码仓库: [Cocos2d-Lua-Community](https://github.com/u0u0/Cocos2d-Lua-Community)
 * 3.7 引擎代码仓库: [Quick-Cocos2dx-Community](https://github.com/u0u0/Quick-Cocos2dx-Community)
 * 第三方库编译框架: [Quick-3rd-party-libs](https://github.com/u0u0/Quick-3rd-party-libs)
 * vim开发插件: [vim-quick-community](https://github.com/u0u0/vim-quick-community)
