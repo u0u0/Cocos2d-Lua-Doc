@@ -53,5 +53,5 @@ $open test.xcodeproj
 
 ```
 mkdir win32-build
-cd win32-buildcmake .. -G"Visual Studio 15 2017"cmake --build .
+cd win32-buildcmake .. -G"Visual Studio 15 2017" -A Win32cmake --build .
 ```
