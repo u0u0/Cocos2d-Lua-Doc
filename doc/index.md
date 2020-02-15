@@ -7,6 +7,7 @@
 ## 4.0 文档
 
 * [cmake 编译](./compile/index.md)
+* [Cocos2d-Lua-Community 概述](./40/index.md)
 
 ## 3.7 文档
 
