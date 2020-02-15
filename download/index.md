@@ -4,6 +4,12 @@ github上的代码并不包含player的二进制包，你可以选择自行编�
 
 以发布时间倒序排列：
 
+# 4.x
+
+* [Cocos2d-Lua-Community 4.0.0](./4-0-0.md)
+
+## 3.x
+
 * [Quick-Cocos2dx-Community 3.7.8](./3-7-8.md)
 * [Quick-Cocos2dx-Community 3.7.7](./3-7-7.md)
 * [Quick-Cocos2dx-Community 3.7.6(Android arm64,龙骨)](./3-7-6.md)

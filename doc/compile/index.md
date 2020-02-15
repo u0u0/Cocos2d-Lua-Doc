@@ -27,7 +27,7 @@ $open test.xcodeproj
 ```
 $mkdir build_ios
 $cd build_ios
-$cmake .. -GXcode -DCMAKE_TOOLCHAIN_FILE=../cmake/ios.toolchain.cmake -DENABLE_ARC=FALSE
+$cmake .. -GXcode -DCMAKE_TOOLCHAIN_FILE=../ios.toolchain.cmake -DENABLE_ARC=FALSE
 $open test.xcodeproj
 ```
 
@@ -53,5 +53,5 @@ $open test.xcodeproj
 
 ```
 mkdir win32-build
-cd win32-buildcmake .. -G"Visual Studio 15 2017" -A Win32cmake --build .
+cd win32-buildcmake .. -G"Visual Studio 16 2019" -A Win32cmake --build .
 ```
