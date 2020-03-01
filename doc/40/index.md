@@ -11,6 +11,7 @@ Cocos2d-Lua-Community 衍生自Cocos2d-x 4.0, 增强Lua接口，改进易用性�
 * 集成更多实用Lua库: protobuf,lsqlite3等.
 * TMX 运行时重构, 支持 Tiled Map Editor 1.2+.
 * Spine 运行时支持 3.8.
+* FairyGUI支持.
 
 ## 开发环境需求
 

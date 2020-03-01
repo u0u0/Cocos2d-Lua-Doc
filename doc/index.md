@@ -8,6 +8,7 @@
 
 * [cmake 编译](./compile/index.md)
 * [Cocos2d-Lua-Community 概述](./40/index.md)
+* [FairyGUI 说明](./fairygui/index.md)
 
 ## 3.7 文档
 
