@@ -66,7 +66,10 @@ $open ./tools/runner/bin/LuaGameRunner.app
 示例:
 
 ```
+//windows
 >LuaGameRunner.exe --width 1136 --height 640 --scale 75 --log --gamedir /newprj --writedir /newprj/output
+//mac
+$LuaGameRunner.app/Contents/MacOS/LuaGameRunner --width 1136 --height 640 --scale 75 --log --gamedir /newprj --writedir /newprj/output
 ```
 
 ## 新建项目
