@@ -25,8 +25,11 @@ db:addDBEventListener("loopComplete", function(event)
 	local attackState = ani:getState("attack_01")
 	if not attackState then
 		attackState = ani:fadeIn("attack_01", 0.1, 1, 1)
-		attackState:setResetToPose(false)
-		attackState:setAutoFadeOutTime(0.1)
+		-- attackState:setResetToPose(false) -- old for 3.7.8
+		-- attackState:setAutoFadeOutTime(0.1)  -- old for 3.7.8
+		attackState.resetToPose = false -- from 3.7.9
+		attackState.autoFadeOutTime = 0.1 -- from 3.7.9
+		attackState.timeScale = 0.5 -- from 3.7.9
 		attackState:addBoneMask("chest")
 		attackState:addBoneMask("effect_l")
 		attackState:addBoneMask("effect_r")
