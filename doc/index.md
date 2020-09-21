@@ -49,6 +49,7 @@
 * [SimpleTCP](./simpletcp/index.md)
 * [HTTP 使用说明](./http/index.md)
 * [WebSocket 使用说明](./websocket/index.md)
+* [lua-protobuf 用法说明**推荐**](./lua-protobuf/index.md)
 * [Quick-Cocos2dx-Community 中的 protoc-gen-lua 使用说明](./protobuffer/index.md)
 
 ## 发布
