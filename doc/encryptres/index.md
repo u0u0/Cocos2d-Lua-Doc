@@ -1,8 +1,8 @@
 # Quick-Cocos2dx-Community 在发布时加密资源文件
 
-> Update to Quick-Cocos2dx-Community 3.7
+> 适用于 Quick-Cocos2dx-Community 3.7.x 和 Cocos2d-Lua-Community 4.x
 
-在3.7中，game32.zip将视为资源，使用同一套加密方式。
+在3.7以上版本中，game32.zip将视为资源，使用同一套加密方式。
 
 ## 示例
 

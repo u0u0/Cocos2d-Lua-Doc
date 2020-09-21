@@ -1,5 +1,7 @@
 # 基于ccui.ListView的TableView实现
 
+> 适用于所有社区版本。
+
 ccui.ListView在一次性加载大量item的时候，会有明显的卡顿，尤其是游戏图鉴这种应用场景比较吃力。在不改变ccui.ListView的cpp实现基础上，我从Lua端模拟了一个iOS TableView用法的实现。
 
 你可以在[Lua-utils

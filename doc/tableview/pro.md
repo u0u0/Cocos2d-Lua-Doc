@@ -1,5 +1,6 @@
 # 基于ccui.ScrollView的TableViewPro实现
 
+> 适用于所有社区版本。
 > 感谢BogeyRuan提供TableViewPro的实现。
 
 基于ccui.ListView的TableView，已经能优化性能，但还不够完美。BogeyRuan提供的TableViewPro，底层用ccui.ScrollView做移动控制，并实现了cell复用，完全模拟了iOS的UITableView。

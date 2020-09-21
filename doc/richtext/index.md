@@ -1,6 +1,6 @@
 # LabelTTF与RichText的扩展
 
-> 适用于3.7.1以及以后版本
+> 适用于3.7.1以上3.7.x版本
 
 ## LabelTTFEx.lua
 

@@ -12,6 +12,13 @@
 6. 支持多文件同时下载。
 7. 只要引擎版本不变，可以任意版本直升。每个人下载的内容不一样。
 
+## 使用注意项
+
+1. 热更场景资源独立。
+2. 热更场景代码不依赖任何其他模块，做到独立。
+3. 避免在热更场景中使用全局变量。
+4. 退出登陆回到热更场景时，清理游戏中初始化的各种数据和全局变量。
+
 ## Updater.lua
 
 可在`https://github.com/u0u0/Lua-utils/blob/master/src/app/utils/Updater.lua`获取热更新核心逻辑代码。配套脚本工具位`https://github.com/u0u0/Lua-utils/blob/master/tools/GenResMD5.py`.

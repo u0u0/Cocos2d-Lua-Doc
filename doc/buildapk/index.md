@@ -64,6 +64,8 @@ build_native.py 在编译成功后，会自动拷贝 res , src 到assert目录�
 
 ## so文件体积的优化
 
+> 4.0不再提供Android裁剪宏，可自行修改camkelist完成。
+
 Quick 对 Android 的 Native 编译进行了模块化设置，可以根据游戏实际用到的功能进行裁剪，从而达到减少包体积的目的。
 
 打开项目下的`frameworks/runtime-src/proj.android/libcocos2dx/jni/Application.mk`文件，找到如下的代码片段：

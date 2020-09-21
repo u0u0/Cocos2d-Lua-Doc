@@ -1,5 +1,7 @@
 # 手动绑定 Lua 接口
 
+> 适用于社区所有版本
+
 ## 前言
 
 Quick 在 `Quick-Cocos2dx-Community/tools/bindings-generator` 有提供一个自动绑定的脚本。我认为这个工具只适合第一次绑定引擎的C++接口，它有一些固有缺陷。比如它对C的接口并不友好，类似spine这类c的runtime，有很多接口没有绑定出来。

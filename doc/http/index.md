@@ -1,6 +1,6 @@
 # HTTP 使用说明
 
-> Update to Quick-Cocos2dx-Community 3.7
+> 适用于所有社区版。注：4.0不再提供Java HTTP模式，只有curl。
 
 network.createHTTPRequest是 Quick 对 HTTP 的优化封装，特别为 Android 设计了 Java HTTP 方式，以避免引入 CURL 以及 OpenSSL 这两个庞大的库。
 

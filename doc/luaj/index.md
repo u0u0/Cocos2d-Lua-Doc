@@ -1,5 +1,7 @@
 # 在 Lua 中使用 luaj 直接调用 Android 的 Java 代码
 
+> 适用于社区所有版本
+
 通常来说，Android的各种 SDK 都是为应用服务的，基于 Java 实现的封装。
 以前在 Cocos2d-lua 中接入 Android SDK 需要先封装C wrapper层，再封装Lua binding层，效率低下。为提高效率， Quick 引入了 LuaJavaBridge，可直接在 Lua 端调用 Java 代码，并支持 Java 回调 Lua 函数。接入SDK 不再需要编写 C 代码，luaj 这个黑科技让 SDK 的接入效率成倍提升。
 

@@ -1,5 +1,7 @@
 # Spine 基本用法
 
+> 文档中的接口适用于3.7.x最新版本和4.x最新版本。
+> 
 > Quick-Cocos2dx-Community 3.7.3 更新 Spine runtime，支持 Spine 3.6 版本导出的数据格式。由于 Spine runtime 各版本之间不兼容，请切换Spine设置到对应的版本使用。
 
 ## 创建骨骼动画

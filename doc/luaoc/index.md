@@ -1,5 +1,7 @@
 # 在 Lua 中使用 luaoc 直接调用 Objective-C 代码
 
+> 适用于社区所有版本
+
 同 luaj 一样，luaoc 可直接在 Lua 端调用 Objective-C 代码，并支持 Objective-C 回调 Lua 函数。
 
 ## 内部机制

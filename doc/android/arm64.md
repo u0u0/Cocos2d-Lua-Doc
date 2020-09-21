@@ -1,6 +1,6 @@
 # 发布 Android arm64-v8a
 
-> Supported from Quick-Cocos2dx-Community 3.7.6
+> Android arm64 从 Quick-Cocos2dx-Community 3.7.6 开始支持。
 
 ## 升级说明
 

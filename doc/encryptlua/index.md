@@ -1,6 +1,6 @@
 # Quick-Cocos2dx-Community 在发布时打包Lua代码
 
-> Update to Quick-Cocos2dx-Community 3.7
+> 适用于 Quick-Cocos2dx-Community 3.7.x 和 Cocos2d-Lua-Community 4.x
 
 Lua代码打包有两个好处：
 

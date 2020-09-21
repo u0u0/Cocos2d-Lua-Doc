@@ -1,5 +1,7 @@
 # Quick-Cocos2dx-Community 中的 protoc-gen-lua 使用说明
 
+> 适用于3.7以上版本.
+
 ## 背景
 
 google的黑科技protobuffer开源以后，在游戏的客户端与服务器通讯中得到了广泛的应用。但是官方一直没有提供lua的支持。

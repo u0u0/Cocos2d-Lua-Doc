@@ -1,5 +1,7 @@
 # Spine 进阶接口
 
+> 文档中的接口适用于3.7.x最新版本和4.x最新版本。
+
 Spine 3.6 runtime 由于数据结构改动，  ~~findSlot~~ 的绑定接口暂时去掉。
 
 ## findAnimation

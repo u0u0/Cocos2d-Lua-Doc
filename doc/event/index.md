@@ -1,4 +1,6 @@
-# 纯Lua事件分发模块
+# PushCenter -- 纯Lua事件分发模块
+
+> 适用于社区所有版本
 
 ## PushCenter.lua
 

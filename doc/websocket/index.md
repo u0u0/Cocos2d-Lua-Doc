@@ -1,5 +1,7 @@
 # WebSocket 使用说明
 
+> 适用于所有社区版。
+
 WebSocket 是 HTML5 开始提供的一种浏览器与服务器间进行全双工通讯的网络技术。在 WebSocket API 中，浏览器和服务器只需要做一次握手的动作，然后浏览器和服务器之间形成一条快速通道，通过快递通道两者之间可以互相传送数据。
 
 Cocos2d-x 引擎集成 libwebsockets，并在 libwebsockets 的客户端 API 基础上封装了一层易用的接口，使得引擎在 C\+\+, JS, Lua 层都能方便的使用 WebSocket 来进行游戏的网络通讯。
