@@ -2,9 +2,9 @@
 
 > 适用于所有社区版。注：4.0不再提供Java HTTP模式，只有curl。
 
-network.createHTTPRequest是 Quick 对 HTTP 的优化封装，特别为 Android 设计了 Java HTTP 方式，以避免引入 CURL 以及 OpenSSL 这两个庞大的库。
-
 ## network.createHTTPRequest 用法
+
+network.createHTTPRequest适用于数据量小的网络请求，默认请求超时10秒，数据超时30秒，可用于小文件下载，如果大文件，则需要注意内存，以及设置数据超时时间。
 
 ```
  -- http request
@@ -47,9 +47,85 @@ request:setPOSTData("this is poststring to server!")
 request:start()
 ```
 
-## Android 注意事项
+## 回调用进度
 
-network.createHTTPRequest 无论是否开启CC_USE_CURL，都无法关闭。但是你可以选择它是用 curl 实现，还是用 Java 实现。
+onRequestCallback回调函数中，通过`event.name == "progress"`可获得数据下载进度，但需要注意，进度会有两次，一次header的，一次body的。底层暂时未去屏蔽header的progress。
+
+## 超时设置
+
+如果需要改变默认数据超时时间可以，使用`setTimeout`来设置，注意需要在start之前调用。如下：
+
+```
+local request = network.createHTTPRequest(callback, url, "GET")
+request:setTimeout(15) -- 15s
+request:start()
+```
+
+> 注：超时时间是整个HTTP完成的时间，不是无数据的响应时间！
+
+## 上传文件
+
+network.uploadFile用于提交form上传，示例如下：
+
+```
+  network.uploadFile(function(evt)
+    if evt.name == "completed" then
+	  local request = evt.request
+	  printf("REQUEST getResponseStatusCode() = %d", request:getResponseStatusCode())
+	  printf("REQUEST getResponseHeadersString() =\n%s", request:getResponseHeadersString())
+	  printf("REQUEST getResponseDataLength() = %d", request:getResponseDataLength())
+	  printf("REQUEST getResponseString() =\n%s", request:getResponseString())
+	end
+  end,
+  "http://127.0.0.1/upload.php",
+  {
+    fileFieldName = "filepath",
+	filePath = device.writablePath.."screen.jpg",
+	contentType = "Image/jpeg",
+	extra = {
+	  {"act", "upload"},
+	  {"submit", "upload"},
+	}
+  })
+```
+
+## 下载到文件
+
+network.createHTTPDownload 从4.0.1开始加入，用于数据文件的下载，内部直接下载到文件，无需分配大内存，支持断点续传。
+
+注意事项：
+
+1. 不做写入文件的保护，应用层自行确保savePath是不用的。
+2. 成功的response code返回值可能是200或206.
+3. 如果服务器不支持短线续传，那么第一次续传会失败并自动删除缓存文件，下一次下载将自动从0开始。使用network.createHTTPDownload请确保服务器支持短点续传。
+4. 不支持`request:getResponseDataLength(),request:getResponseString(),request:getResponseData()`获取数据或数据长度，因为是直接下载到文件的。
+
+```
+ local function onRequestCallback(event)
+    local request = event.request
+    if event.name == "completed" then
+      local code = request:getResponseStatusCode()
+      if code == 200 or code == 206 then -- 206 resume from break-point
+        print("download success")
+        return
+      end
+      print("HTTP unkonw response code:", code) -- get error
+    elseif event.name == "progress" then
+      print("progress" .. event.dltotal)
+    else
+      print(event.name) -- get error
+      print(request:getErrorCode(), request:getErrorMessage())
+    end
+  end
+
+  local savePath = cc.FileUtils:getInstance():getWritablePath() .. "download.data"
+  local request = network.createHTTPDownload(onRequestCallback, "https://baidu.com", savePath)
+  request:start()
+```
+
+## Android 切换底层实现（3.7 or 3.6）
+
+在3.7.x或3.6.x中，可以修改mk文件中的`CC_USE_CURL`，来切换HTTP的底层实现方式。
 
 `CC_USE_CURL := 0` 使用 Java HTTP，如果设置为 1 则使用 curl HTTP。
 

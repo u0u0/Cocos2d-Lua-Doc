@@ -33,11 +33,12 @@
 * [Cocos Studio 使用说明](./cocostudio/index.md)
 * [Cocos Studio 垂死挣扎Lua版](./cocostudio/mod.md)
 
-### 骨骼动画
+### 第三方编辑支持
 
 * [Spine 基本用法](./spine/basic/index.md)
 * [Spine 进阶接口](./spine/advance/index.md)
 * [dragonBones 用法说明](./dragonbones/index.md)
+* [Tiled 地图编辑器](./tiled/index.md)
 
 ### 音频
 

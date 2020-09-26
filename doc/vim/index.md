@@ -2,7 +2,7 @@
 
 > 适用于所有社区版本。
 
-用脚本语言开发游戏，最大的障碍在于开发环境，cocos官方曾经有款失败的cocos code ide编辑器，早已停止开发。个人任务做好编辑器是个庞大的工程，参考Golang这样的开源项目，它的做法是做一套现有编辑器的插件，以支持Golang的开发。Quick之前的Sublime插件QuickXDev依然是这样的一个思路，然个人并不会开发sublime插件，vim插件懂一点点，于是把QuickXDev的主要功能开发了*vim-quick-cocos2d-x*插件。仅有*vim-quick-cocos2d-x*其实是不够的，你还需要一些配套的Vim插件以及设置来达到好用的状态。
+用脚本语言开发游戏，最大的障碍在于开发环境，cocos官方曾经有款失败的cocos code ide编辑器，早已停止开发。个人认为做好编辑器是个庞大的工程，参考Golang这样的开源项目，它的做法是做一套现有编辑器的插件，以支持Golang的开发。Quick之前的Sublime插件QuickXDev依然是这样的一个思路，然个人并不会开发sublime插件，vim插件懂一点点，于是把QuickXDev的主要功能开发了*vim-quick-cocos2d-x*插件。仅有*vim-quick-cocos2d-x*其实是不够的，你还需要一些配套的Vim插件以及设置来达到好用的状态。
 
 我把自己Vim开发Cocos2d-Lua用到的配置整理出来，供大家参考。
 
