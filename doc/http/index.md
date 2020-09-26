@@ -62,7 +62,7 @@ request:start()
 ```
 
 > 注：超时时间是整个HTTP完成的时间，不是无数据的响应时间！
-> createHTTPDownload无需设置超时。
+> createHTTPDownload下载模式下是最低速度的持续时间。
 
 ## 上传文件
 
