@@ -98,7 +98,7 @@ network.createHTTPDownload 从4.0.1开始加入，用于数据文件的下载，
 1. 不做写入文件的保护，应用层自行确保savePath是不用的。
 2. 成功的response code返回值可能是200或206.
 3. 如果服务器不支持短线续传，那么第一次续传会失败并自动删除缓存文件，下一次下载将自动从0开始。使用network.createHTTPDownload请确保服务器支持短点续传。
-4. 不支持`request:getResponseDataLength(),request:getResponseString(),request:getResponseData()`获取数据或数据长度，因为是直接下载到文件的。
+4. 不支持`request:getResponseString(),request:getResponseData()`获取数据，因为是直接下载到文件的。
 
 ```
  local function onRequestCallback(event)
