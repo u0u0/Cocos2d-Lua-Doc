@@ -62,6 +62,7 @@ request:start()
 ```
 
 > 注：超时时间是整个HTTP完成的时间，不是无数据的响应时间！
+> createHTTPDownload无需设置超时。
 
 ## 上传文件
 
@@ -99,6 +100,7 @@ network.createHTTPDownload 从4.0.1开始加入，用于数据文件的下载，
 2. 成功的response code返回值可能是200或206.
 3. 如果服务器不支持短线续传，那么第一次续传会失败并自动删除缓存文件，下一次下载将自动从0开始。使用network.createHTTPDownload请确保服务器支持短点续传。
 4. 不支持`request:getResponseString(),request:getResponseData()`获取数据，因为是直接下载到文件的。
+5. 无需设置超时，下载模式下,内部通过最小下载速度的持续时间来判断超时。
 
 ```
  local function onRequestCallback(event)
