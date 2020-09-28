@@ -6,6 +6,7 @@ github上的代码并不包含player的二进制包，你可以选择自行编�
 
 # 4.x
 
+* [Cocos2d-Lua-Community 4.0.1](./4-0-1.md)
 * [Cocos2d-Lua-Community 4.0.0](./4-0-0.md)
 
 ## 3.x
