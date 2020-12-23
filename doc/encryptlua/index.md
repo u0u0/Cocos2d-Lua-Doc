@@ -2,10 +2,7 @@
 
 > 适用于 Quick-Cocos2dx-Community 3.7.x 和 Cocos2d-Lua-Community 4.x
 
-Lua代码打包有两个好处：
-
-1. 方便用 cc.LuaLoadChunksFromZIP 做热更新。
-2. 充分利用luajit的bytecode保护的你源代码。
+Lua代码打包可以利用luajit的bytecode保护源代码。
 
 > **注意：3.7 新的脚本只打包，不进行xxtea加密。**
 
