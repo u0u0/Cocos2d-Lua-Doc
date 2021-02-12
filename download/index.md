@@ -11,6 +11,7 @@ github上的代码并不包含player的二进制包，你可以选择自行编�
 
 ## 3.x
 
+* [Quick-Cocos2dx-Community 3.7.10](./3-7-10.md)
 * [Quick-Cocos2dx-Community 3.7.9](./3-7-9.md)
 * [Quick-Cocos2dx-Community 3.7.8](./3-7-8.md)
 * [Quick-Cocos2dx-Community 3.7.7](./3-7-7.md)

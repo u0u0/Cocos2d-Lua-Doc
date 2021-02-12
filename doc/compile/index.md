@@ -31,7 +31,7 @@ $cmake .. -GXcode -DCMAKE_TOOLCHAIN_FILE=../ios.toolchain.cmake -DENABLE_ARC=FAL
 $open test.xcodeproj
 ```
 
-默认为iOS device 工程，调整为模拟器需添加`ios.toolchain.cmake` 支持 `-DIOS_PLATFORM=SIMULATOR64` 等平台参数，参考其文档。
+默认为iOS device 工程，调整为模拟器需添加`ios.toolchain.cmake` 支持 `-DPLATFORM=SIMULATOR64` 等平台参数，参考其文档。
 
 ## 编译 Android
 
