@@ -15,3 +15,11 @@
     * 作者: 蓝熊工作室(http://bigbluebear.top/)
     * TapTap 地址: https://www.taptap.com/app/197720
     * 引擎版本 Cocos2d-Lua-Community 4.0.2
+
+## 公司产品
+
+* 北京麻将
+	* ![北京麻将](./03.beijmajiang.png)
+	* 简介: 有版号，非常正经的棋牌。
+    * 公司: 乐享乐讯(http://www.beijingmj.com/)
+    * 引擎版本 Quick 3.3
