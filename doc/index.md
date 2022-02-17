@@ -25,6 +25,10 @@
 * [Cocos2d-x Lua Community 中的 Lua 数学类](./math/index.md)
 * [PushCenter -- 纯Lua事件分发模块](./event/index.md)
 
+### 渲染
+
+* [4.0 backend 加载自定义 Shader](./shader/backend.md)
+
 ### UI
 
 * [FairyGUI 说明](./fairygui/index.md)
