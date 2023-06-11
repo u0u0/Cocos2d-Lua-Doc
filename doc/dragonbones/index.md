@@ -4,7 +4,7 @@
 
 龙骨是国产的免费2D骨骼动画编辑器，有 DragonBonesCPP runtime 对 Cocos2d-x 进行支持。不过它的渲染是基于3.8以后的 CCSprite 数据接口，经过分析后，我改造为适应于 Quick-Cocos2dx-Community 的渲染。
 
-在 DragonBonesCPP 的基础上，社区版手动绑定封装了 Lua 接口，在此感谢社区的“york”抽出时间一同封装 Lua 接口。由于 DragonBones runtime 核心数据结构和接口总多，Lua API导出并不完全，只封装了大部分常用的接口，如遇到项目中有特别需要，请加入社区群讨论，一同改进。
+在 DragonBonesCPP 的基础上，社区版手动绑定封装了 Lua 接口，在此感谢社区的“york”抽出时间一同封装 Lua 接口。由于 DragonBones runtime 核心数据结构和接口众多，Lua API导出并不完全，只封装了大部分常用的接口，如遇到项目中有特别需要，请加入社区群讨论，一同改进。
 
 ## 用法示例
 

@@ -1,6 +1,6 @@
 # Cocos Studio 使用说明
 
-> Quick-Cocos2dx-Community 3.7.2以下版本使用Cocos Stuido 2.0.6, uick-Cocos2dx-Community 3.7.3以上版本使用Cocos Studio 3.10。
+> Quick-Cocos2dx-Community 3.7.2以下版本使用Cocos Stuido 2.0.6, Quick-Cocos2dx-Community 3.7.3以上版本使用Cocos Studio 3.10。
 
 ## Cocos Studio 版本
 
