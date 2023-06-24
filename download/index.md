@@ -6,6 +6,7 @@ github上的代码并不包含player的二进制包，你可以选择自行编�
 
 # 4.x
 
+* [Cocos2d-Lua-Community 4.0.5](./4-0-5.md)
 * [Cocos2d-Lua-Community 4.0.4](./4-0-4.md)
 * [Cocos2d-Lua-Community 4.0.3](./4-0-3.md)
 * [Cocos2d-Lua-Community 4.0.2](./4-0-2.md)
@@ -26,7 +27,7 @@ github上的代码并不包含player的二进制包，你可以选择自行编�
 * [Quick-Cocos2dx-Community 3.7.1](./3-7-1.md)
 * [Quick-Cocos2dx-Community 3.7.0 (大版本更新)](./3-7-0.md)
 * [Quick-Cocos2dx-Community 3.6.5](./3-6-5.md)
-	* [3.6.5 补丁发布页](./patch/3-6-5.md)
+  * [3.6.5 补丁发布页](./patch/3-6-5.md)
 * [Quick-Cocos2dx-Community 3.6.4](./3-6-4.md)
 * [Quick-Cocos2dx-Community 3.6.3](./3-6-3.md)
 * [Quick-Cocos2dx-Community 3.6.2](./3-6-2.md)
