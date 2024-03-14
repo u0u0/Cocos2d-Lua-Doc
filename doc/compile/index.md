@@ -27,7 +27,7 @@ $open test.xcodeproj
 ```
 $mkdir build_ios
 $cd build_ios
-$cmake .. -GXcode -DCMAKE_TOOLCHAIN_FILE=../ios.toolchain.cmake -DENABLE_ARC=FALSE
+$cmake .. -GXcode -DCMAKE_TOOLCHAIN_FILE=../ios.toolchain.cmake -DENABLE_ARC=FALSE -DPLATFORM=OS64
 $open test.xcodeproj
 ```
 
@@ -48,10 +48,11 @@ $open test.xcodeproj
 
 > Android 的 cmake编译，直接由AS自动完成，无需命令行参与。
 
-
 ## 编译 Win32
 
 ```
 mkdir win32-build
-cd win32-buildcmake .. -G"Visual Studio 16 2019" -A Win32cmake --build .
+cd win32-build
+cmake .. -G"Visual Studio 16 2019" -A Win32
+cmake --build .
 ```
